@@ -25,8 +25,19 @@
             <TextBox x:Name="messageText" MinWidth="200" MaxWidth="300" />
         </StackPanel>
 
-        <Button x:Name="addMessage" Grid.Row="1" Grid.Column="1" Padding="0 5">Add Message</Button>
+        <Button x:Name="addMessage" Grid.Row="1" Grid.Column="1" Padding="0 5"
+                Click="addMessage_Click">Add Message</Button>
 
-        <ListBox x:Name="messageList" Grid.Row="2" Grid.Column="1" Margin="0 20 0 0"/>
+        <ListBox x:Name="messageList" Grid.Row="2" Grid.Column="1" Margin="0 20 0 0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}"/>
+
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+
     </Grid>
 </Window>

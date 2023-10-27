@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,30 +10,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WPFMessageWall
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for WelcomeWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WelcomeWindow : Window
     {
-        BindingList<string> messages = new BindingList<string>();
-
-        public MainWindow()
+        public WelcomeWindow()
         {
             InitializeComponent();
-
-            messageList.ItemsSource = messages;
         }
 
-        private void addMessage_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            messages.Add(messageText.Text);
-            messageText.Text = "";
-
+            if (string.IsNullOrWhiteSpace(lastNameLabel.ToString()) || string.IsNullOrWhiteSpace(firstNameLabel.ToString()))
+            {
+                ShowDialog();
+            }
         }
     }
 
