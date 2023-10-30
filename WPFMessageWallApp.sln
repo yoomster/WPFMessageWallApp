@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFMessageWall", "WPFMessageWall\WPFMessageWall.csproj", "{00DB1DA8-B5EF-45C6-A371-304A27A4B088}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFMessageWall", "WPFMessageWall\WPFMessageWall.csproj", "{00DB1DA8-B5EF-45C6-A371-304A27A4B088}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFMessageWallLibrary", "WPFMessageWallLibrary\WPFMessageWallLibrary.csproj", "{D39B713C-BA78-4108-90CF-51DB52E33472}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{00DB1DA8-B5EF-45C6-A371-304A27A4B088}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00DB1DA8-B5EF-45C6-A371-304A27A4B088}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00DB1DA8-B5EF-45C6-A371-304A27A4B088}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D39B713C-BA78-4108-90CF-51DB52E33472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D39B713C-BA78-4108-90CF-51DB52E33472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D39B713C-BA78-4108-90CF-51DB52E33472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D39B713C-BA78-4108-90CF-51DB52E33472}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

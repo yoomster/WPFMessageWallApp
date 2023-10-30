@@ -1,0 +1,26 @@
+﻿<Window x:Class="WPFMessageWall.AddAddressForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFMessageWall"
+        mc:Ignorable="d"
+        Title="AddAddressForm" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="headerLabel" Margin="66,31,322,362" FontSize="18" FontFamily="Bahnschrift Light" Grid.ColumnSpan="2" Grid.Column="2">Add an address</Label>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="601,330,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="18"/>
+        <Label x:Name="streetNameLabel" Content="Street name:" HorizontalAlignment="Left" Margin="66,106,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="18"/>
+        <TextBox x:Name="streetNameText" HorizontalAlignment="Left" Height="32" Margin="184,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" FontFamily="Bahnschrift Light" FontSize="18" RenderTransformOrigin="0.579,-0.279"/>
+        <Label x:Name="houseNrLabel" Content="House nr:" HorizontalAlignment="Left" Margin="66,143,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="18"/>
+        <TextBox x:Name="houseNrText" HorizontalAlignment="Left" Height="32" Margin="184,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" FontFamily="Bahnschrift Light" FontSize="18" RenderTransformOrigin="0.579,-0.279"/>
+        <Label x:Name="cityLabel" Content="City:" HorizontalAlignment="Left" Margin="66,217,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="18"/>
+        <TextBox x:Name="cityText" HorizontalAlignment="Left" Height="32" Margin="184,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" FontFamily="Bahnschrift Light" FontSize="18" RenderTransformOrigin="0.579,-0.279"/>
+        <Label x:Name="postcodeLabel" Content="Postcode:" HorizontalAlignment="Left" Margin="66,180,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="18"/>
+        <TextBox x:Name="postcodeText" HorizontalAlignment="Left" Height="32" Margin="184,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" FontFamily="Bahnschrift Light" FontSize="18" RenderTransformOrigin="0.579,-0.279"/>
+        <Label x:Name="countryLabel" Content="Country:" HorizontalAlignment="Left" Margin="66,254,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="18"/>
+        <TextBox x:Name="counrtyLabel" HorizontalAlignment="Left" Height="32" Margin="184,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" FontFamily="Bahnschrift Light" FontSize="18" RenderTransformOrigin="0.579,-0.279"/>
+    </Grid>
+</Window>
