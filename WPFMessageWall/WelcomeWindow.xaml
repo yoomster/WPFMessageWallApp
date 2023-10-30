@@ -19,7 +19,11 @@
         <TextBox x:Name="firstNameText" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="304,125,0,0" TextWrapping="Wrap" Width="100" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="18" RenderTransformOrigin="-0.371,0.379" Grid.ColumnSpan="2"/>
         <Label x:Name="lastNameLabel" Grid.Column="1" Content="Last Name:" HorizontalAlignment="Left" Height="28" VerticalAlignment="Center" FontFamily="Bahnschrift Light" FontSize="18" Margin="201,0,0,0"/>
         <TextBox x:Name="lastNameText" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="304,0,0,0" TextWrapping="Wrap" Width="100" VerticalAlignment="Center" FontFamily="Bahnschrift Light" FontSize="18" Grid.ColumnSpan="2"/>
-        <Button x:Name="addNamesButton" Grid.Column="2" Content="Continue" HorizontalAlignment="Left" Margin="133,286,0,0" VerticalAlignment="Top" Click="addNamesButton_Click"/>
+        <Button x:Name="addNamesButton" Grid.Column="2" Content="Continue" HorizontalAlignment="Left" Margin="133,286,0,0" VerticalAlignment="Top" Click="addNamesButton_Click" FontSize="18" FontFamily="Bahnschrift Light"/>
+        <Button x:Name="addAddressButton" Grid.Column="2" Content="Add address" HorizontalAlignment="Left" Margin="133,218,0,0" VerticalAlignment="Top" Click="addAddressButton_Click" FontSize="18" FontFamily="Bahnschrift Light"/>
+        <Label x:Name="addressLabel" Grid.Column="1" Content="Address:" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="18" Margin="201,218,0,0"/>
+        <ListBox Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="141" Margin="304,218,0,0" VerticalAlignment="Top" Width="161" d:ItemsSource="{d:SampleData ItemCount=5}" FontSize="18" FontFamily="Bahnschrift Light"/>
+
 
     </Grid>
 </Window>

@@ -24,28 +24,6 @@ namespace WPFMessageWall
             InitializeComponent();
         }
 
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    if (string.IsNullOrWhiteSpace(lastNameText.Text) || string.IsNullOrWhiteSpace(firstNameText.Text))
-        //    {
-        //        MessageBox.Show($"incorrect enty, plz fill both names");
-        //    }
-        //    else
-        //    {
-        //        //PersonModel person = new()
-        //        //{
-        //        //    FirstName = firstNameText.ToString(),
-        //        //    LastName = lastNameText.ToString()
-        //        //};
-
-        //        MessageBox.Show($"Hi {firstNameText.Text} {lastNameText.Text}");
-
-        //        MainWindow form2 = new();
-        //        form2.Show();
-        //    }
-
-
-        //}
 
         private void addNamesButton_Click(object sender, RoutedEventArgs e)
         {
@@ -66,6 +44,12 @@ namespace WPFMessageWall
         {
             public string FirstName { get; set; }
             public string LastName { get; set; }
+        }
+
+        private void addAddressButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddAddressForm form3 = new AddAddressForm(this);
+            form3.Show();
         }
     }
 

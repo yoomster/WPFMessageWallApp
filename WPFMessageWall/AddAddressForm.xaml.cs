@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPFMessageWallLibrary;
 
 namespace WPFMessageWall
 {
@@ -19,14 +21,44 @@ namespace WPFMessageWall
     /// </summary>
     public partial class AddAddressForm : Window
     {
-        public AddAddressForm()
+        ISaveAddress _parent;
+        public AddAddressForm(ISaveAddress parent)
         {
             InitializeComponent();
+            _parent = parent;   
         }
+
+        //public void SaveAddres(AddressModel address)
+        //{
+        //    address.StreetName = streetNameText.Text;
+        //    address.HouseNr = houseNrText.Text;
+        //    address.PostCode = postcodeText.Text;
+        //    address.City = cityText.Text;
+        //    address.Country = countryText.Text;
+        //}
 
         private void addAdressButon_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(streetNameText.Text) || string.IsNullOrWhiteSpace(houseNrText.Text) || string.IsNullOrWhiteSpace(postcodeText.Text) || string.IsNullOrWhiteSpace(cityText.Text) || string.IsNullOrWhiteSpace(countryText.Text))
+            {
+                MessageBox.Show("Incorrect entry, plz enter both names",
+                                    "Blank Name Field", MessageBoxButton.OK);
+            }
+            else
+            {
+                AddressModel address = new AddressModel
+                {
+                    StreetName = streetNameText.Text,
+                    HouseNr = houseNrText.Text,
+                    PostCode = postcodeText.Text,
+                    City = cityText.Text,
+                    Country = countryText.Text
+                };
 
+                _parent.SaveAddres(address);
+
+                this.Close();
+            }
         }
     }
 }
