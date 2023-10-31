@@ -21,7 +21,7 @@ namespace WPFMessageWall
     /// </summary>
     public partial class AddAddressForm : Window
     {
-        ISaveAddress _parent;
+        readonly ISaveAddress _parent;
         public AddAddressForm(ISaveAddress parent)
         {
             InitializeComponent();
@@ -30,18 +30,18 @@ namespace WPFMessageWall
 
         private void addAdressButon_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(streetNameText.Text) || string.IsNullOrWhiteSpace(houseNrText.Text) || string.IsNullOrWhiteSpace(postcodeText.Text) || string.IsNullOrWhiteSpace(cityText.Text) || string.IsNullOrWhiteSpace(countryText.Text))
+            if (string.IsNullOrWhiteSpace(StreetNameText.Text) || string.IsNullOrWhiteSpace(houseNrText.Text) || string.IsNullOrWhiteSpace(postcodeText.Text) || string.IsNullOrWhiteSpace(cityText.Text) || string.IsNullOrWhiteSpace(countryText.Text))
             {
                 MessageBox.Show("Incorrect entry, plz enter both names",
                                     "Blank Name Field", MessageBoxButton.OK);
             }
             else
             {
-                AddressModel address = new AddressModel
+                AddressModel address = new ()
                 {
-                    StreetName = streetNameText.Text,
+                    StreetName = StreetNameText.Text,
                     HouseNr = houseNrText.Text,
-                    PostCode = postcodeText.Text,
+                    Postcode = postcodeText.Text,
                     City = cityText.Text,
                     Country = countryText.Text
                 };

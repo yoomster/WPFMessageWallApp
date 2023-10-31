@@ -5,22 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFMessageWall"
         mc:Ignorable="d"
-        Title="AddAddressForm" Height="455" Width="683">
-    <Grid Margin="0,0,10,5">
+        Title="Add A New Address" Height="266" Width="467">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="headerLabel" Margin="66,31,322,362" FontSize="18" FontFamily="Bahnschrift Light" Grid.ColumnSpan="2" Grid.Column="2">Add an address</Label>
-        <Button x:Name="addAdressButon" Content="Add Address" HorizontalAlignment="Left" Margin="400,293,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="18" Height="56" Width="136" Click="addAdressButon_Click"/>
-        <Label x:Name="streetNameLabel" Content="Street name:" HorizontalAlignment="Left" Margin="66,106,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="18"/>
-        <TextBox x:Name="streetNameText" HorizontalAlignment="Left" Height="32" Margin="184,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" FontFamily="Bahnschrift Light" FontSize="18" RenderTransformOrigin="0.579,-0.279"/>
-        <Label x:Name="houseNrLabel" Content="House nr:" HorizontalAlignment="Left" Margin="66,143,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="18"/>
-        <TextBox x:Name="houseNrText" HorizontalAlignment="Left" Height="32" Margin="184,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" FontFamily="Bahnschrift Light" FontSize="18" RenderTransformOrigin="0.579,-0.279"/>
-        <Label x:Name="cityLabel" Content="City:" HorizontalAlignment="Left" Margin="66,217,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="18"/>
-        <TextBox x:Name="cityText" HorizontalAlignment="Left" Height="32" Margin="184,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" FontFamily="Bahnschrift Light" FontSize="18" RenderTransformOrigin="0.579,-0.279"/>
-        <Label x:Name="postcodeLabel" Content="Postcode:" HorizontalAlignment="Left" Margin="66,180,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="18"/>
-        <TextBox x:Name="postcodeText" HorizontalAlignment="Left" Height="32" Margin="184,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" FontFamily="Bahnschrift Light" FontSize="18" RenderTransformOrigin="0.579,-0.279"/>
-        <Label x:Name="countryLabel" Content="Country:" HorizontalAlignment="Left" Margin="66,254,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="18"/>
-        <TextBox x:Name="countryText" HorizontalAlignment="Left" Height="32" Margin="184,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" FontFamily="Bahnschrift Light" FontSize="18" RenderTransformOrigin="0.579,-0.279"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="1" Margin="0 10 5 0" HorizontalAlignment="Right">Street name</TextBlock>
+        <TextBox x:Name="StreetNameText" Grid.Row="0" Grid.Column="2" 
+                 MinWidth="200" MaxWidth="300" Margin="0 10 0 0" />
+
+        <TextBlock Grid.Row="1" Grid.Column="1" Margin="0 10 5 0" HorizontalAlignment="Right">House number</TextBlock>
+        <TextBox x:Name="houseNrText" Grid.Row="1" Grid.Column="2" 
+                 MinWidth="200" MaxWidth="300" Margin="0 10 0 0" />
+
+        <TextBlock Grid.Row="2" Grid.Column="1" Margin="0 10 5 0" HorizontalAlignment="Right">Postcode</TextBlock>
+        <TextBox x:Name="postcodeText" Grid.Row="2" Grid.Column="2" 
+                 MinWidth="200" MaxWidth="300" Margin="0 10 0 0" />
+
+        <TextBlock Grid.Row="3" Grid.Column="1" Margin="0 10 5 0" HorizontalAlignment="Right">City</TextBlock>
+        <TextBox x:Name="cityText" Grid.Row="3" Grid.Column="2" 
+                 MinWidth="200" MaxWidth="300" Margin="0 10 0 0" />
+
+        <TextBlock Grid.Row="4" Grid.Column="1" Margin="0 10 5 0" HorizontalAlignment="Right">Country</TextBlock>
+        <TextBox x:Name="countryText" Grid.Row="4" Grid.Column="2" 
+                 MinWidth="200" MaxWidth="300" Margin="0 10 0 0" />
+
+
+        <Button x:Name="addAdressButon" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="20" 
+                Padding="0 10"  Click="addAdressButon_Click">Save address</Button>
+
     </Grid>
 </Window>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPFMessageWallLibrary;
 
 namespace WPFMessageWall
 {
@@ -19,13 +21,16 @@ namespace WPFMessageWall
     /// </summary>
     public partial class WelcomeWindow : Window
     {
+        BindingList<AddressModel> addresses = new BindingList<AddressModel>();
+
         public WelcomeWindow()
         {
             InitializeComponent();
+            addressesList.ItemsSource= addresses;
         }
 
 
-        private void addNamesButton_Click(object sender, RoutedEventArgs e)
+        private void savePersonButton_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(lastNameText.Text) || string.IsNullOrWhiteSpace(firstNameText.Text))
             {
@@ -42,8 +47,8 @@ namespace WPFMessageWall
 
         private void addAddressButton_Click(object sender, RoutedEventArgs e)
         {
-            AddAddressForm form3 = new AddAddressForm(this);
-            form3.Show();
+            //AddAddressForm form3 = new AddAddressForm(this);
+            //form3.Show();
         }
     }
 

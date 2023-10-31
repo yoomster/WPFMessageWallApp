@@ -10,10 +10,10 @@ namespace WPFMessageWallLibrary
     {
         public string StreetName { get; set; }
         public string HouseNr { get; set; }
-        public string PostCode { get; set; }
+        public string Postcode { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
-        public string AddressDisplayValue => $"{StreetName}, {HouseNr}, {PostCode}, {City}, {Country}";
+        public string AddressDisplayValue => $"{StreetName} {HouseNr}, {Postcode}  {City}, {Country}";
 
     }
 }

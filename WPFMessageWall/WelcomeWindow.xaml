@@ -4,26 +4,58 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFMessageWall"
-        mc:Ignorable="d"
-        Title="Welcome to Naomi's Message Wall" Height="394" Width="644">
-    <Grid x:Name="WelcomePage">
+        mc:Ignorable="d" FontSize="22"
+        Title="Welcome to Naomi's Message Wall" Height="450" Width="800">
+    <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="371*"/>
-            <ColumnDefinition Width="310*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Welcome to my message wall app!" HorizontalAlignment="Left" Height="33" Margin="10,36,0,0" VerticalAlignment="Top" Width="292" FontFamily="Bahnschrift Light" FontSize="18" Grid.Column="1"/>
-        <Label Grid.Column="1" Content="Please leave your info" HorizontalAlignment="Left" Height="30" Margin="115,69,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="18"/>
-        <Label x:Name="firstNameLabel" Grid.Column="1" Content="First Name:" HorizontalAlignment="Left" Height="29" Margin="200,126,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="18"/>
-        <TextBox x:Name="firstNameText" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="304,125,0,0" TextWrapping="Wrap" Width="100" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="18" RenderTransformOrigin="-0.371,0.379" Grid.ColumnSpan="2"/>
-        <Label x:Name="lastNameLabel" Grid.Column="1" Content="Last Name:" HorizontalAlignment="Left" Height="28" VerticalAlignment="Center" FontFamily="Bahnschrift Light" FontSize="18" Margin="201,0,0,0"/>
-        <TextBox x:Name="lastNameText" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="304,0,0,0" TextWrapping="Wrap" Width="100" VerticalAlignment="Center" FontFamily="Bahnschrift Light" FontSize="18" Grid.ColumnSpan="2"/>
-        <Button x:Name="addNamesButton" Grid.Column="2" Content="Continue" HorizontalAlignment="Left" Margin="133,286,0,0" VerticalAlignment="Top" Click="addNamesButton_Click" FontSize="18" FontFamily="Bahnschrift Light"/>
-        <Button x:Name="addAddressButton" Grid.Column="2" Content="Add address" HorizontalAlignment="Left" Margin="133,218,0,0" VerticalAlignment="Top" Click="addAddressButton_Click" FontSize="18" FontFamily="Bahnschrift Light"/>
-        <Label x:Name="addressLabel" Grid.Column="1" Content="Address:" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="18" Margin="201,218,0,0"/>
-        <ListBox Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="141" Margin="304,218,0,0" VerticalAlignment="Top" Width="161" d:ItemsSource="{d:SampleData ItemCount=5}" FontSize="18" FontFamily="Bahnschrift Light"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <!--<Label Content="Welcome to my message wall app!" HorizontalAlignment="Left" Height="33" Margin="10,36,0,0" VerticalAlignment="Top" Width="292" FontFamily="Bahnschrift Light" FontSize="18" Grid.Column="1"/>
+        <Label Grid.Column="1" Content="Please leave your info" HorizontalAlignment="Left" Height="30" Margin="115,69,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="18"/>-->
+
+
+        <TextBlock Grid.Row="0" Grid.Column="1" Margin="0 20 5 0" HorizontalAlignment="Right"> First name</TextBlock>
+        <TextBox x:Name="firstNameText" Grid.Row="0" Grid.Column="2" 
+                 MinWidth="200" MaxWidth="300" Margin="0 20 0 0" />
+
+
+        <TextBlock Grid.Row="1" Grid.Column="1" Margin="0 10 5 0" HorizontalAlignment="Right"> Last name</TextBlock>
+        <TextBox x:Name="lastNameText" Grid.Row="1" Grid.Column="2" 
+                 MinWidth="200" MaxWidth="300" Margin="0 10 0 0" />
+
+        <TextBlock Grid.Row="2" Grid.Column="1" Margin="0 10 5 0" HorizontalAlignment="Right"> Active</TextBlock>
+        <CheckBox x:Name="activeCheckbox" Grid.Row="2" Grid.Column="2" Margin="0 10 0 0"
+                 VerticalAlignment="Center" />
+
+        <TextBlock Grid.Row="3" Grid.Column="1" Margin="0,20,5,0" HorizontalAlignment="Right">Addresses</TextBlock>
+
+        <Button x:Name="addAddressButton" Grid.Row="3" Grid.Column="2" Width="50" Margin="0,20,0,0"
+                HorizontalAlignment="Right" Click="addAddressButton_Click">Add</Button>
+        <ListBox x:Name="addressesList" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="0 5 0 0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="{Binding Path=AddressDisplayValue}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Button x:Name="savePersonButton" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="20" 
+                Padding="0 10"  Click="savePersonButton_Click">Save</Button>
 
     </Grid>
 </Window>
