@@ -28,15 +28,6 @@ namespace WPFMessageWall
             _parent = parent;   
         }
 
-        //public void SaveAddres(AddressModel address)
-        //{
-        //    address.StreetName = streetNameText.Text;
-        //    address.HouseNr = houseNrText.Text;
-        //    address.PostCode = postcodeText.Text;
-        //    address.City = cityText.Text;
-        //    address.Country = countryText.Text;
-        //}
-
         private void addAdressButon_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(streetNameText.Text) || string.IsNullOrWhiteSpace(houseNrText.Text) || string.IsNullOrWhiteSpace(postcodeText.Text) || string.IsNullOrWhiteSpace(cityText.Text) || string.IsNullOrWhiteSpace(countryText.Text))

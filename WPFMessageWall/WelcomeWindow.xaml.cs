@@ -40,12 +40,6 @@ namespace WPFMessageWall
             }
         }
 
-        public class PersonModel
-        {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-        }
-
         private void addAddressButton_Click(object sender, RoutedEventArgs e)
         {
             AddAddressForm form3 = new AddAddressForm(this);
