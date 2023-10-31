@@ -19,7 +19,7 @@ namespace WPFMessageWall
     /// <summary>
     /// Interaction logic for WelcomeWindow.xaml
     /// </summary>
-    public partial class WelcomeWindow : Window
+    public partial class WelcomeWindow : Window, ISaveAddress
     {
         BindingList<AddressModel> addresses = new BindingList<AddressModel>();
 
@@ -47,8 +47,13 @@ namespace WPFMessageWall
 
         private void addAddressButton_Click(object sender, RoutedEventArgs e)
         {
-            //AddAddressForm form3 = new AddAddressForm(this);
-            //form3.Show();
+            AddAddressForm form3 = new AddAddressForm(this);
+            form3.Show();
+        }
+
+        public void SaveAddres(AddressModel address)
+        {
+            addresses.Add(address);
         }
     }
 
