@@ -21,7 +21,7 @@ namespace WPFMessageWall
     /// </summary>
     public partial class WelcomeWindow : Window, ISaveAddress
     {
-        BindingList<AddressModel> addresses = new BindingList<AddressModel>();
+        BindingList<AddressModel> addresses = new ();
 
         public WelcomeWindow()
         {
@@ -38,6 +38,14 @@ namespace WPFMessageWall
             }
             else
             {
+                PersonModel person = new()
+                {
+                    FirstName = firstNameText.Text,
+                    LastName = lastNameText.Text,
+                    IsActive = (activeCheckbox.IsChecked ?? false),
+                };
+
+
                 MessageBox.Show($"Hi {firstNameText.Text} {lastNameText.Text}");
 
                 MainWindow form2 = new();
